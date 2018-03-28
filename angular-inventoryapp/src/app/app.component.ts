@@ -1,7 +1,4 @@
-import {
-  Component,
-  EventEmitter
-} from '@angular/core';
+import {Component} from '@angular/core';
 import { Product } from '../models/product.model';
 
 @Component({
@@ -32,6 +29,10 @@ export class AppComponent {
         ['Men', 'Accessories', 'Hats'],
         29.99)
       ];
+  }
+
+  productWasSelected(product:Product):void{
+    console.log('Product clicked: ', product)
   }
 
   
