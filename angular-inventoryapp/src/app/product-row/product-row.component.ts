@@ -8,6 +8,4 @@ import { Product } from '../../models/product.model';
 export class ProductRowComponent{
 @Input() product: Product;
 @HostBinding('attr.class') cssClass = 'item';
-
-  constructor() { }
 }
