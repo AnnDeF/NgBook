@@ -1,14 +1,24 @@
-import { AppPage } from './app.po';
+import { InventoryAppPage } from './app.po';
 
-describe('angular-inventoryapp App', () => {
-  let page: AppPage;
+describe('inventory-app App', () => {
+  let page: InventoryAppPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new InventoryAppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should load the page', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getHeaderText()).toEqual(`Angular Inventory App`);
+  });
+
+  it('should have a blue jacket on the page', () => {
+    page.navigateTo();
+    expect(page.getItemName(1)).toEqual(`Blue Jacket`);
+  });
+
+  it('should have black shoes on the page', () => {
+    page.navigateTo();
+    expect(page.getItemName(0)).toEqual(`Black Running Shoes`);
   });
 });
